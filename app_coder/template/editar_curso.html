@@ -1,0 +1,16 @@
+{% extends 'padre.html' %}
+
+{% load static %}
+
+
+{% block contenido %}
+    <h1>Editar Curso</h1>
+    <form action="{% url 'editar_curso' curso.id %}" method="POST">
+        {% csrf_token %}
+        <p>(Actual) Nombre:</p>
+        {{mi_formulario.nombre}}
+        <p>(Actual) Camada:</p>
+        {{mi_formulario.camada}}
+        <input type="submit" value="Enviar"/>        
+    </form>
+{% endblock %}
